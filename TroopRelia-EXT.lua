@@ -40,7 +40,7 @@ function TroopRelia:LoadMenu()
  
     --Farm
     self.Menu:MenuElement({type = MENU, id = "Farm", name = "LaneClear"})
-    self.Menu.Farm:MenuElement({id = "lcW", name = "Use E", value = true})
+    self.Menu.Farm:MenuElement({id = "lcW", name = "Use W", value = true})
     self.Menu.Farm:MenuElement({id = "lcMana", name = "Min. Mana", value = 40, min = 0, max = 100})
 
     --LastHit 
@@ -269,7 +269,7 @@ function TroopRelia:LastHit()
     	        for _, Minion in pairs(self.GetMinions(200)) do
     	        	if self.Menu.LastHit.lhQ:Value() and getdmg("Q", Minion, myHero) > Minion.health then
                             if self:CanCast(_Q) and self:IsValidTarget(Minion, self:GetRange(_Q), false, myHero.pos) then
-                                    self:CastQ(Minion.pos)
+                                    self:CastQ()
                             end
                     end
             end
